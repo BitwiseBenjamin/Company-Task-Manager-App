@@ -87,7 +87,7 @@ const Login = () => {
   
         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
         <p ref={errRef} className={errClass} aria-live="assertive">{errMsg}</p>
-          <TextInput label="Username" placeholder="your username..." 
+          <TextInput label="Username" placeholder="to use type: Zachary" 
                 type="text"
                 id="username"
                 ref={userRef}
@@ -98,15 +98,14 @@ const Login = () => {
             />
           <PasswordInput
                 label="Password"
-                placeholder="your password..."
-                type="password"
+                placeholder="to use type: Zachary"
                 id="password"
                 onChange={handlePwdInput}
                 value={password}
                 required
           />
           <Group position="" mt="">
-            <Checkbox label="Trust this device" sx={{ lineHeight: 1 }}
+            <Checkbox color="dark"label="Trust this device" sx={{ lineHeight: 1 }}
                 id="persist"
                 onChange={handleToggle}
                 checked={persist} />

@@ -1,4 +1,4 @@
-import { createStyles, Header, Autocomplete, Group, Burger, rem } from '@mantine/core';
+import { createStyles, Header, Autocomplete, Group, Burger, rem, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
 import { MantineLogo } from '@mantine/ds';
@@ -52,6 +52,7 @@ export function HeaderSearch({ links }) {
         <img style={{ width: '40px', height: '40px' }} src={logo}/>
         <h3>Company.co</h3>
         </Group>
+        <Group><Text color="gray">Click employee login to see full application</Text></Group>
         <Group>
           <Group ml={50} spacing={5} className={classes.links}>
             {items}
