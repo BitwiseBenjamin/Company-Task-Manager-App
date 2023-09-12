@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { createStyles, Container, Group, Anchor, rem, Text, Title, useMantineTheme, Grid, Image, Button } from '@mantine/core';
 import { 
     faRightFromBracket,
     faFilePen,
@@ -56,7 +57,7 @@ const DashHeader = () => {
                 title="New Note"
                 onClick={onNewNoteClicked}
             >
-                <FontAwesomeIcon icon={faFileCirclePlus} />
+                <FontAwesomeIcon style={{width: "30px"}} icon={faFileCirclePlus} />
             </button>
         )
     }
@@ -69,7 +70,7 @@ const DashHeader = () => {
                 title="New User"
                 onClick={onNewUserClicked}
             >
-                <FontAwesomeIcon icon={faUserPlus} />
+                <FontAwesomeIcon style={{width: "30px"}} icon={faUserPlus} />
             </button>
         )
     }
@@ -83,7 +84,7 @@ const DashHeader = () => {
                     title="Users"
                     onClick={onUsersClicked}
                 >
-                    <FontAwesomeIcon icon={faUserGear} />
+                    <FontAwesomeIcon style={{width: "30px"}} icon={faUserGear} />
                 </button>
             )
         }
@@ -97,7 +98,7 @@ const DashHeader = () => {
                 title="Notes"
                 onClick={onNotesClicked}
             >
-                <FontAwesomeIcon icon={faFilePen} />
+                <FontAwesomeIcon style={{width: "30px"}} icon={faFilePen} />
             </button>
         )
     }
@@ -110,7 +111,7 @@ const DashHeader = () => {
             title="Logout"
             onClick={sendLogout}
         >
-            <FontAwesomeIcon icon={faRightFromBracket} />
+            <FontAwesomeIcon style={{width: "30px"}} icon={faRightFromBracket} />
         </button>
     )
 
@@ -138,7 +139,10 @@ const DashHeader = () => {
             <header className="dash-header">
                 <div className={`dash-header__container ${dashClass}`}>
                     <Link to="/dash">
-                        <h1 className="dash-header__title">techNotes</h1>
+                        <Group>
+                        <Image maw={40} mx="auto" radius="md" src={require('../img/looking-apartment_69882.png')} alt={'sample1'} style={{ width: '100%' }} />
+                        <h1 className="dash-header__title">Company.co</h1>
+                        </Group>
                     </Link>
                     <nav className="dash-header__nav">
                         {buttonContent}

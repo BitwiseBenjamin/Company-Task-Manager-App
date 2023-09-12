@@ -12,7 +12,7 @@ const NewNote = () => {
         }),
     })
 
-    if (!users?.length) return <PulseLoader color={"#FFF"} />
+    if (!users?.length) return <PulseLoader color={"rbg(10,9,9)"} />
 
     const content = <NewNoteForm users={users} />
 

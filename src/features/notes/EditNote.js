@@ -7,7 +7,7 @@ import PulseLoader from 'react-spinners/PulseLoader'
 import useTitle from '../../hooks/useTitle'
 
 const EditNote = () => {
-    useTitle('techNotes: Edit Note')
+    useTitle('Company.co: Edit Note')
 
     const { id } = useParams()
 
@@ -25,7 +25,7 @@ const EditNote = () => {
         }),
     })
 
-    if (!note || !users?.length) return <PulseLoader color={"#FFF"} />
+    if (!note || !users?.length) return <PulseLoader color={"rbg(10,9,9)"} />
 
 
     if (!isManager && !isAdmin) {

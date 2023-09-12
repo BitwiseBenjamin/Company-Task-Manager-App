@@ -4,7 +4,6 @@ import useAuth from "../../hooks/useAuth"
 
 const NotesList = () => {
 
-
     const {username, isManager, isAdmin} = useAuth()
     const {
         data: notes,

@@ -3,3 +3,5 @@ export const ROLES = {
     Manager: 'Manager',
     Admin: 'Admin'
 }
+
+export const STRINGROLES = ['Employee','Manager', 'Admin']

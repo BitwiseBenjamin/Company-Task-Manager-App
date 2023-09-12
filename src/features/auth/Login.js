@@ -1,6 +1,19 @@
 import { useRef, useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 
+import {
+    TextInput,
+    PasswordInput,
+    Checkbox,
+    Anchor,
+    Paper,
+    Title,
+    Text,
+    Container,
+    Group,
+    Button,
+  } from "@mantine/core";
+  
 import { useDispatch } from 'react-redux'
 import { setCredentials } from './authSlice'
 import { useLoginMutation } from './authApiSlice'
@@ -19,11 +32,11 @@ const Login = () => {
     const dispatch = useDispatch()
 
     const [login, { isLoading }] = useLoginMutation()
-
+/*
     useEffect(() => {
         userRef.current.focus()
     }, [])
-
+*/
     useEffect(() => {
         setErrMsg('');
     }, [username, password])
@@ -60,6 +73,53 @@ const Login = () => {
     if (isLoading) return <p>Loading...</p>
 
     const content = (
+<>
+        <Container size={420} my={40}>
+        <Title
+          align="center"
+          sx={(theme) => ({
+            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+            fontWeight: 700,
+          })}
+        >
+          Employee Login
+        </Title>
+  
+        <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+        <p ref={errRef} className={errClass} aria-live="assertive">{errMsg}</p>
+          <TextInput label="Username" placeholder="your username..." 
+                type="text"
+                id="username"
+                ref={userRef}
+                value={username}
+                onChange={handleUserInput}
+                autoComplete="off"
+                required
+            />
+          <PasswordInput
+                label="Password"
+                placeholder="your password..."
+                type="password"
+                id="password"
+                onChange={handlePwdInput}
+                value={password}
+                required
+          />
+          <Group position="" mt="">
+            <Checkbox label="Trust this device" sx={{ lineHeight: 1 }}
+                id="persist"
+                onChange={handleToggle}
+                checked={persist} />
+            <Button color="dark" fullWidth  onClick={handleSubmit}>
+            Sign in
+          </Button>
+          <Link to="/">Back to Home</Link>
+          </Group>
+        </Paper>
+      </Container>
+      
+
+{/*
         <section className="public">
             <header>
                 <h1>Employee Login</h1>
@@ -109,6 +169,9 @@ const Login = () => {
                 <Link to="/">Back to Home</Link>
             </footer>
         </section>
+
+        */ }
+    </>
     )
 
     return content
