@@ -3,7 +3,7 @@ import { setCredentials } from '../../features/auth/authSlice'
 
 //'https://company-task-manager-api.onrender.com'
 const baseQuery = fetchBaseQuery({
-    baseUrl: 'http://localhost:3500',
+    baseUrl: 'https://company-task-manager-api.onrender.com',
     credentials: 'include',
     prepareHeaders: (headers, { getState }) => {
         const token = getState().auth.token
